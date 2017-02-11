@@ -8,4 +8,9 @@ class Room
   def add_songs(list_of_songs)
     @songlist.concat(list_of_songs) 
   end
+
+  def clear_songlist
+    @songlist = []
+  end
+  
 end
