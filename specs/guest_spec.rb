@@ -16,4 +16,12 @@ class TestGuest < Minitest::Test
     @guest1.change_favourite_song(@song1)
     assert_equal(@song1, @guest1.favourite_song)
   end
+
+  def test_guest_has_favourite_song
+    assert_equal(false, @guest1.favourite_song?)
+    @guest1.change_favourite_song(@song1)
+    assert_equal(true, @guest1.favourite_song?)
+  end
+
+
 end
