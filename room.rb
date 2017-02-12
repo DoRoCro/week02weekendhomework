@@ -16,7 +16,11 @@ class Room
   end
 
   def check_in(guest)
-    @guest_list.add_element_to_list(guest)
+    if self.number_of_guests < @capacity_limit
+      @guest_list.add_element_to_list(guest)
+      return
+    end
+    return false
   end
 
   def check_out(guest)
@@ -25,5 +29,13 @@ class Room
 
   def contains_guest?(guest_to_find)
     return @guest_list.contains?(guest_to_find)
+  end
+
+  def number_of_guests
+    return @guest_list.contents.count
+  end
+
+  def set_capacity_limit(number)
+    @capacity_limit = number
   end
 end
