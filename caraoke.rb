@@ -5,7 +5,7 @@ require_relative('./bar')
 require_relative('./song_list')
 require_relative('./guest_list')
 require_relative('./viewer')
-require('pry')
+# require('pry')
 
 class Caraoke
 
