@@ -1,9 +1,10 @@
 class Room
-  attr_reader :name, :songlist 
+  attr_reader :name, :songlist, :capacity_limit
   def initialize(name, guest_list, songlist)
     @name = name
     @guest_list = guest_list
     @songlist = songlist
+    @capacity_limit = 0
   end
 
   def add_songs(list_of_songs)
