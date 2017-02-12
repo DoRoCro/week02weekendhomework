@@ -20,6 +20,9 @@ class ListArray
     return return_list
   end
 
-  
+  def contains?(search_element)
+    return true if @contents.find(search_element)
+    return false
+  end
 
 end
