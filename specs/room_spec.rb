@@ -3,6 +3,7 @@ require('minitest/rg')
 require_relative('../room')
 require_relative('../song')
 require_relative('../guest')
+require_relative('../guest_list')
 
 # require('pry')
 
@@ -17,7 +18,7 @@ class TestRoom < Minitest::Test
     
     @a_songlist = [@song1, @song2, @song3]
 
-    @room1 = Room.new(room1name)
+    @room1 = Room.new(room1name, GuestList.new)
 
     @guest1 = Guest.new("Zaphod")
     @guest2 = Guest.new("Trillian")
@@ -44,7 +45,7 @@ class TestRoom < Minitest::Test
 
   def test_room_can_check_in_guest
     @room1.check_in(@guest1)
-    #assert_equal(true, @room1.findguest(@guest1))
+    assert_equal(true, @room1.contains_guest?(@guest1))
   end
 
 end

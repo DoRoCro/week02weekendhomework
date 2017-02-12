@@ -1,5 +1,7 @@
 class ListArray
   
+  # Largely reinventing Array functions but trying to demonstrate inheritance
+
   attr_reader :contents
   
   def initialize()
