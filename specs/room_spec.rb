@@ -66,4 +66,12 @@ class TestRoom < Minitest::Test
     assert_equal(4, @room1.capacity_limit)
   end
 
+  def test_room_can_add_guests_to_capacity_limit_only
+    @room1.check_in(@guest1)
+    @room1.check_in(@guest1)
+    @room1.check_in(@guest1)
+    @room1.check_in(@guest1)
+    @room1.check_in(@guest1)
+    assert_equal(4 = room1.number_of_guests)
+
 end
