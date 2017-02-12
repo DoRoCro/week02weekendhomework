@@ -47,8 +47,9 @@ class Caraoke
       @room2.check_in(x)
       @viewer.show_check_in(@room2, x)
     end
+    @room1.songlist.play
     # to be continued... ideally after setting up RoomList to enumerate above setup...
-    
+
 
   end
 
