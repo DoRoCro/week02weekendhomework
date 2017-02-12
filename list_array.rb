@@ -21,8 +21,7 @@ class ListArray
   end
 
   def contains?(search_element)
-    return true if @contents.find(search_element)
-    return false
+    return  @contents.include?(search_element)
   end
 
 end
