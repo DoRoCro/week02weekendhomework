@@ -26,4 +26,9 @@ class ListArray
     return  @contents.include?(search_element)
   end
 
+  def remove_from_list(element)
+    # Will delete all occurrences of element if contents elements not all unique
+    return @contents.delete(element)
+  end
+
 end

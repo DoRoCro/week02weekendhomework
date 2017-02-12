@@ -48,4 +48,12 @@ class TestRoom < Minitest::Test
     assert_equal(true, @room1.contains_guest?(@guest1))
   end
 
+  def test_room_can_check_out_guest
+    @room1.check_in(@guest1)
+    @room1.check_out(@guest1)
+    assert_equal(false, @room1.contains_guest?(@guest1))
+
+
+  end
+
 end

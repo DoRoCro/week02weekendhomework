@@ -38,11 +38,18 @@ class TestListArray < Minitest::Test
     list1.add_list_to_list([@object, @object, "find_me", @object, @object])
     assert_equal(true, list1.contains?("find_me"))
   end
+  
   def test_can_find_element_in_list_not_found
     list1 = ListArray.new
     list1.add_list_to_list([@object, @object, "find_me", @object, @object])
     assert_equal(false, list1.contains?("not there"))
   end
-    
+
+  def test_can_remove_element_from_list
+    list1 = ListArray.new
+    list1.add_list_to_list([@object, @object, "delete me", @object, @object])
+    assert_equal("delete me", list1.remove_from_list("delete me"))
+    assert_equal(false, list1.contains?("delete me"))
+  end
 
 end
