@@ -18,4 +18,5 @@ class Guest
     return false
   end
 
+
 end

@@ -12,5 +12,10 @@ class Room
   def clear_songlist
     @songlist = []
   end
+
+  def check_in(guest)
+    
+  end
+
   
 end
