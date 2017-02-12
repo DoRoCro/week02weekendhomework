@@ -1,21 +1,25 @@
 class Room
   attr_reader :name, :songlist 
-  def initialize(name, guest_list)
+  def initialize(name, guest_list, songlist)
     @name = name
     @guest_list = guest_list
-    @songlist = []
+    @songlist = songlist
   end
 
   def add_songs(list_of_songs)
-    @songlist.concat(list_of_songs) 
+    @songlist.add_list_to_list(list_of_songs)
   end
 
   def clear_songlist
-    @songlist = []
+    return @songlist.empty_list
   end
 
   def check_in(guest)
     @guest_list.add_element_to_list(guest)
+  end
+
+  def check_out(guest)
+    return @guest_list.remove_from_list(guest)
   end
 
   def contains_guest?(guest_to_find)
