@@ -5,6 +5,7 @@ require_relative('./bar')
 require_relative('./song_list')
 require_relative('./guest_list')
 require_relative('./viewer')
+require('pry')
 
 class Caraoke
 
@@ -21,23 +22,34 @@ class Caraoke
       ]
     )
 
-    room1 = Room.new( "Classics", GuestList.new, songlist1 )
-    room2 = Room.new( "70's favourites", GuestList.new, songlist1)
+    @room1 = Room.new( "Classics", GuestList.new, songlist1 )
+    @room2 = Room.new( "70's favourites", GuestList.new, songlist1)
 
-    guestlist1 = GuestList.new
-    guestlist1.add_element_to_list(Guest.new("Ann"))
-    guestlist1.add_element_to_list(Guest.new("Bob"))
-    guestlist1.add_element_to_list(Guest.new("Cas"))
+    @guestlist1 = GuestList.new
+    @guestlist1.add_element_to_list(Guest.new("Ann"))
+    @guestlist1.add_element_to_list(Guest.new("Bob"))
+    @guestlist1.add_element_to_list(Guest.new("Cas"))
 
-    guestlist2 = GuestList.new
-    guestlist2.add_element_to_list(Guest.new("Dave"))
-    guestlist2.add_element_to_list(Guest.new("Ed"))
-    guestlist2.add_element_to_list(Guest.new("Fred"))
+    @guestlist2 = GuestList.new
+    @guestlist2.add_element_to_list(Guest.new("Dave"))
+    @guestlist2.add_element_to_list(Guest.new("Ed"))
+    @guestlist2.add_element_to_list(Guest.new("Fred"))
   end
 
   def run()
     bar = Bar.new( @name )
-    @viewer.start(@bar.name)
+    @viewer.start(bar.name)
+    @guestlist1.contents.each do |x| 
+      @room1.check_in(x)
+      @viewer.show_check_in(@room1, x)
+    end
+    @guestlist2.contents.each do |x| 
+      @room2.check_in(x)
+      @viewer.show_check_in(@room2, x)
+    end
+    # to be continued... ideally after setting up RoomList to enumerate above setup...
+    
+
   end
 
 end

@@ -11,15 +11,9 @@ class Viewer
     gets.chomp
   end
 
-  def show_update(entry)
-    puts "#{entry.guest.name} rolled #{entry.roll}"
-    if(entry.modifier != 0)
-      puts "#{entry.player.name} hit a #{entry.modifier_type}! Moves #{entry.modifier}"
-    end
-    puts "#{entry.player.name} is on tile #{entry.player.position}"
+  def show_check_in(room,guest)
+    puts "#{guest.name} checks in to #{room.name}"
   end
 
-  def end(winner_name)
-    puts "Congratulations, #{winner_name} wins"
-  end
+  
 end
