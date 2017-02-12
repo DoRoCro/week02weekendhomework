@@ -8,6 +8,6 @@ require_relative('../guest_list')
 
 class TestGuestList < MiniTest::Test
 
-
+  
 
 end
